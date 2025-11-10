@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Management App</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <h1>Task ManagementApp</h1>
@@ -54,11 +55,32 @@
                 <option value="Overdue">Overdue</option>
             </select>
         </div>
+
+        <div>
+            <label for="filter-category">By Category:</label>
+            <select id="filter-category">
+                <option value="all">All</option>
+            </select>
+        </div>
     </section>
 
+    <section>
+        <h2>Task List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Task Name</th>
+                    <th>Category</th>
+                    <th>Deadline</th>
+                    <th>Status</th>
+                    <th>Update Status</th>
+                </tr>
+            </thead>
+            <tbody id="task-table-body">
+            </tbody>
+        </table>
+        <p id="no-tasks-message">No tasks yet. Add one above.</p>
+    </section>
 
-
-
-    
 </body>
 </html>
