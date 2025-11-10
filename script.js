@@ -1,6 +1,6 @@
 const STORAGE_KEY = "task_management_tasks";
 
-let tasks = ["id", "name", "category", "deadline", "status"];
+let tasks = [];
 
 const taskForm = document.getElementById("task-form");
 const taskNameInput = document.getElementById("task-name");
@@ -12,7 +12,7 @@ const filterStatusSelect = document.getElementById("filter-status");
 const filterCategorySelect = document.getElementById("filter-category");
 
 const taskTableBody = document.getElementById("task-table-body");
-const noTaskMessage = document.getElementById("no-tasks-message");
+const noTasksMessage = document.getElementById("no-tasks-message");
 
 loadTasksFromStorage();
 checkOverdueTasks();
@@ -47,10 +47,10 @@ taskForm.addEventListener("submit", function (event) {
     RenderTasks();
 
     taskForm.reset();
-    taskStatusInput.value = "Input Progress";
+    taskStatusInput.value = "In Progress";
 });
 
-filterStatusSelect. addEventListener("change", function () {
+filterStatusSelect.addEventListener("change", function () {
     RenderTasks();
 });
 
@@ -65,7 +65,7 @@ function loadTasksFromStorage() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
         try {
-            task = JSON.parse(saved);
+            tasks = JSON.parse(saved);
         }   catch (error) {
             console.log("Error reading stored tasks", error);
             tasks = [];
@@ -124,7 +124,7 @@ function RenderTasks() {
 
         const nameCell = document.createElement("td");
         nameCell.textContent = task.name;
-        row. appendChild(namecell);
+        row.appendChild(nameCell);
 
         const categoryCell = document.createElement("td");
         categoryCell.textContent = task.category;

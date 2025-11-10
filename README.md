@@ -29,3 +29,5 @@ add tasks with:
 
 In this project, I created a simple task management app using HTML, CSS, and JavaScript. One of the hardest parts was making sure the tasks on the page always matched what was actually saved. I fixed this by storing all the tasks in one array and using a renderTasks() function to update the display every time something changed.
 Another challenge was figuring out how to automatically mark tasks as overdue. I compared each task’s deadline to the current date, and if it was past due and not completed, I updated its status to “Overdue.” I also had to learn how to properly use localStorage and JSON so the tasks would stay after refreshing.
+
+Small note: JavaScript would not work at the top of html. It did work once I placed it at the bottom
