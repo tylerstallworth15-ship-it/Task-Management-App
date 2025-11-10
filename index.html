@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Task ManagementApp</h1>
+
+
+    <section>
+        <h2>Add New Task</h2>
+        <form id="task-form">
+            <div>
+                <label for="task-name">Task Name:</label>
+                <input type="text" id="task-name" required>
+            </div>
+
+            <div>
+                <label for="task-category">Category:</label>
+                <input type="text" id="task-category" required>
+            </div>
+
+            <div>
+                <label for="task-deadline">Deadline:</label>
+                <input type="date" id="task-deadline" required>
+            </div>
+
+            <div>
+                <label for="task-status">Initial Status:</label>
+                <select id="task-status">
+                    <option value="Not Started">Not Started</option>
+                    <option value="In Progress" selected>In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+
+            <button type="submit">Add Task</button>
+        </form>
+    </section>
+
+
+    <section>
+        <h2>Filter Tasks</h2>
+        <div>
+            <label for="filter-status">By Status:</label>
+            <select id="filter-status">
+                <option value="all">All</option>
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+                <option value="Overdue">Overdue</option>
+            </select>
+        </div>
+    </section>
+
+
+
+
+    
+</body>
+</html>
